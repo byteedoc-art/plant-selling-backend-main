@@ -1,22 +1,35 @@
 
 import mongoose from "mongoose";
+
+const AddressSchema = new mongoose.Schema({
+    street:String,
+    city: String,
+    state: String,
+    country: String,
+    landMark:String,
+    pincode: Number
+})
+
 const UserSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:true,
+    name: {
+        type: String,
+        required: true,
     },
     email: {
         type: String,
         require: true,
         unique: true
     },
+    phone:Number,
+    address: AddressSchema,
+
     password: {
         type: String,
         require: true
     }
 });
 
-const User =  mongoose.model("users",UserSchema)
+const User = mongoose.model("users", UserSchema)
 export default User;
 
 

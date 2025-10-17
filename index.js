@@ -5,9 +5,17 @@ import authRoutes from './src/routes/authRoutes.js'
 import db from './config.js';
 import profileRouter from './src/routes/profileRoutes.js';
 dotenv.config();
+import cors from 'cors'
 
 const app = express();
+
 app.use(json())
+app.use(cors());
+
+// Task 
+// make api for categories of plants 
+
+
 
 app.get('/',(req,res)=>{
     res.send("Server is Running correctly ...");
