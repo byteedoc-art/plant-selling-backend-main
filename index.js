@@ -17,6 +17,8 @@ app.use(cors());
 
 
 
+
+
 app.get('/',(req,res)=>{
     res.send("Server is Running correctly ...");
 })
@@ -27,6 +29,7 @@ db();
 // All routes 
 app.use('/auth',authRoutes)
 app.use('/profile',profileRouter);
+app.use('/category',profileRouter);
 
 app.listen(process.env.PORT,()=>{
      console.log(`Server run ho raha es ${process.env.PORT} PORT per `)
