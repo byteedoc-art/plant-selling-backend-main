@@ -7,6 +7,7 @@ import profileRouter from './src/routes/profileRoutes.js';
 dotenv.config();
 import cors from 'cors'
 import RolesRouter from './src/routes/rolesroutes.js';
+import authMiddleware from './src/middleware/authMiddleware.js';
 
 const app = express();
 
@@ -29,7 +30,7 @@ db();
 
 // All routes 
 app.use('/auth',authRoutes)
-app.use('/profile',profileRouter);
+app.use('/profile', profileRouter);
 app.use('/category',profileRouter);
 app.use('/roles',RolesRouter);
 

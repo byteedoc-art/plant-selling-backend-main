@@ -1,12 +1,12 @@
 
 
-const RolesControllers = (req,res) =>{
+const RolesControllers = (req, res) => {
 
-    const {name} =req.body;
+    const { name } = req.body;
     console.log(name);
-return res.json({
-    name:name,
-    meassage:" add backend pages" 
-})
+    return res.json({
+        name: name,
+        meassage: " add backend pages"
+    })
 }
 export default RolesControllers;
