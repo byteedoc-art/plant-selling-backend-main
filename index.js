@@ -6,6 +6,7 @@ import db from './config.js';
 import profileRouter from './src/routes/profileRoutes.js';
 dotenv.config();
 import cors from 'cors'
+import RolesRouter from './src/routes/rolesroutes.js';
 
 const app = express();
 
@@ -30,6 +31,7 @@ db();
 app.use('/auth',authRoutes)
 app.use('/profile',profileRouter);
 app.use('/category',profileRouter);
+app.use('/roles',RolesRouter);
 
 app.listen(process.env.PORT,()=>{
      console.log(`Server run ho raha es ${process.env.PORT} PORT per `)
