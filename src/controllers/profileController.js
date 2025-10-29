@@ -1,6 +1,5 @@
 
 import User from "../modals/authModal.js"
-import jwt from "jsonwebtoken";
 
 export const get_profile_data = async (req, res) => {
     console.log("sldfjlskjfklsdkf11")
@@ -8,7 +7,7 @@ export const get_profile_data = async (req, res) => {
         return res.json({
             success: true,
             message: "Profile data fetched successfully!!",
-            data: req.user
+            data: req.this
         })
     }
     catch (e) {
@@ -20,7 +19,7 @@ export const update_profile_data = async (req, res) => {
     try {
   
         const { name, address } = req.body;
-        const data = req.user;
+        const data = req.this;
         const email = data.email;
 
         const updatedUser = await User.findOneAndUpdate(
