@@ -3,7 +3,13 @@ import User from '../modals/authModal.js'
 
 const authMiddleware = async (req, res, next) => {
     try {
+
         const token = req.headers.authorization;
+
+         if(!token)
+         {
+            res.json({message : "token is required!!"});
+         }
         const maintoken = token.split(" ")[1];
         const data = jwt.verify(maintoken, "plant123");
         const email = data.email;
